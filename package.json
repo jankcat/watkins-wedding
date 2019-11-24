@@ -1,0 +1,23 @@
+{
+  "name": "watkins-wedding",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "sudo node ./bin/www",
+    "sass": "node-sass public/assets/sass/ -o public/assets/css/"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "ejs": "~2.5.6",
+    "express": "^4.16.4",
+    "express-session": "^1.15.3",
+    "mongoose": "^4.10.4",
+    "morgan": "^1.9.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "serve-favicon": "~2.4.2"
+  }
+}

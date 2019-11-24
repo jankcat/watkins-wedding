@@ -1,0 +1,85 @@
+<!-- Reservation -->
+<section class="wrapper style1 fullscreen fade-up">
+	<div class="inner">
+		<h2>RSVP</h2>
+		<form ng-Submit="submitRSVP()">
+			<div class="row gtr-uniform">
+				<div class="col-12">
+                <h3>Dinner & Reception - 6:00PM</h3>
+                <p><a href="https://goo.gl/maps/xT6M3jqsxEM2" target="_blank">The Brockhouse</a><br />
+                3875 Point Grey Rd.<br />
+                Vancouver, BC. | V6R1B3 <br />
+                <i>*cash bar available</i>
+                </p>
+				</div>
+
+				<section ng-repeat="reservation in list">
+					<div ng-repeat="guest in reservation.guests track by $index">
+						<div class="col-4 col-12-small">
+							<h2>{{guest.name}}</h2>
+						</div>
+						
+						<div class="col-4 col-12-small">
+							<input type="radio" id="attending-{{$index}}" ng-model="reservation.guests[$index].attending" value="true">
+							<label for="attending-{{$index}}"><b>Will</b> be attending.</label>
+						</div>
+						<div class="col-4 col-12-small">
+							<input type="radio" id="not-attending-{{$index}}" ng-model="reservation.guests[$index].attending" value="false">
+							<label for="not-attending-{{$index}}"><b>Will Not</b> be attending.</label>
+						</div>
+					</div>
+
+					<div class="col-12">
+						<textarea placeholder="Please list any dietary concerns for your party..." rows="6" ng-model="reservation.content"></textarea>
+					</div>
+					
+					<div class="col-12">
+						<ul class="actions">
+							<li><input type="submit" value="Submit RSVP" class="primary" /></li>
+						</ul>
+					</div>
+			</section>
+			</div>
+		</form>
+	</div>
+	<div class="inner" ng-show="reservation.hasSubmitted">
+        <h2>Thank you!</h2>
+        <p>Thank you for submitting your RSVP!<br />
+            If you need to change or update any information, please contact Leslie directly at <a href="mailto:lwatkins12@pacificlife.ca">lwatkins12@pacificlife.ca</a>
+        </p>  
+        <div class="row">
+            <div class="col-6 col-12-medium">
+                <h2>Remember to take note of this information:</h2>
+                
+                <h3>Ceremony - 1:30PM</h3>
+                <p><a href="https://goo.gl/maps/ThV79LxATeK2" target="_blank">Hillside Community Church</a><br />
+                1393 Austin Ave.<br />
+                Coquitlam, BC. | V3K3P6
+                </p>
+
+                <h3>Dinner & Reception - 6:00PM</h3>
+                <p><a href="https://goo.gl/maps/xT6M3jqsxEM2" target="_blank">The Brockhouse</a><br />
+                3875 Point Grey Rd.<br />
+                Vancouver, BC. | V6R1B3 <br />
+                <i>*cash bar available</i>
+                </p>
+            </div>
+            <div class="col-6 col-12-medium">
+                <h2>Looking for gift ideas?</h2>
+		        <p>The Watkins are registered at the following places:<br />
+			        <h3>Home Outfitters</h3>
+			        <p><a href="https://registry.homeoutfitters.com/registry/view-registry/les___jo_s_wedding" target="_blank">Home Outfitters Registry</a>
+			        </p>
+
+			        <h3>The Bay</h3>
+			        <p><a href="https://registry.thebay.com/registry/view-registry/the_watkins" target="_blank">The Bay Registry</a>
+			        </p>
+
+                    <h3>Flight Centre</h3>
+			        <p><a href="https://cws.givex.com/cws/flightcentre_registry/consumer/registry/view_registry.py?registry_id:814619667" target="_blank">Flight Centre Registry</a>
+			        </p>
+		        </p>
+            </div>
+        </div>
+	</div>
+</section>
